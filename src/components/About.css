@@ -1,0 +1,80 @@
+.about-section {
+  background: linear-gradient(135deg, #040509, #16143e, #4b1b5d);
+  color: white;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.about-intro h1 {
+  font-size: 3rem;
+  color: #64ffda;
+  margin-bottom: 1rem;
+}
+
+.about-intro p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+}
+
+.about-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 250px;
+  height: 300px;
+  perspective: 1000px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  font-size: 1.2rem;
+  color: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+.card-front {
+  background: linear-gradient(to bottom right, #272756, #542abe);
+}
+
+.card-back {
+  background: linear-gradient(to bottom right, #3658c5, #d33cab);
+  transform: rotateY(180deg);
+}
+
+@media (max-width: 768px) {
+  .about-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 80%;
+  }
+}
